@@ -5,16 +5,18 @@ use music_store_project;
  -- QUESTION SET 1
 --   Q1.who is the senior most employee based on the job title?
 
- select * from employee
-   order by levels desc
-    limit 1 
+SELECT  CONCAT_WS(' ',first_name,last_name)Name , title
+FROM employee
+ORDER BY levels DESC
+limit 1; 
  
  --  Q2 which country have most invoice?
  
    Select count(*) as c , billing_country 
    from invoice
    group by billing_country
-   order by c desc;
+   order by c desc
+    limit 1;
 
 -- Q3 what are top 3 values of total invoice?
    select total
